@@ -1,0 +1,25 @@
+<%- include("partials/header.ejs") %>
+        <div class="todo">
+             
+            <h2>
+                Today
+            </h2>
+
+            <form class="form" action="/" method="post">
+                <input class="new-item" type="text" name="todo" placeholder="Add new task" autocomplete="off" id="inputtodo" required>
+                <button class="add" type="submit" name="list" value="date">+</button>
+            </form>
+            
+            <% if (locals.newItem) { for (i=newItem.length-1; i>=0; i--) {%>
+                <div class="item">
+                    <input type="checkbox" name="done" id="done">
+                    <p>
+                    <%= newItem[i] %>
+                    </p>
+                </div>
+            <% }} %>
+        </div>
+        <div></div>
+    </div>    
+</body>
+</html>
